@@ -1,22 +1,27 @@
 {
   "name": "tokenhouse-claude-breez",
-  "version": "0.1.0",
+  "version": "2026.05.05-84a231c",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "bun --watch server/index.ts",
+    "server": "bun server/index.ts",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cleanup-install-versions": "rm -rf node_modules && bun install"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@elysiajs/cors": "^1.4.2",
+    "elysia": "^1.4.28",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.1",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.2"
   }
 }

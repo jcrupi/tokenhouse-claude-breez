@@ -1,0 +1,18 @@
+[
+  {
+    "name": "habitaware-ai",
+    "url": "https://grape-habitaware-ai.fly.dev",
+    "token": "REPLACE_WITH_GRAPE_SERVICE_TOKEN",
+    "model": "claude-sonnet-4-6",
+    "repo": "https://github.com/jcrupi/habitaware",
+    "branch": "main"
+  },
+  {
+    "name": "crazy-week-ai",
+    "url": "https://grape-crazy-week-ai.fly.dev",
+    "token": "REPLACE_WITH_GRAPE_SERVICE_TOKEN",
+    "model": "claude-sonnet-4-6",
+    "repo": "https://github.com/jcrupi/crazy-week",
+    "branch": "main"
+  }
+]

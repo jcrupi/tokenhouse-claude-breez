@@ -194,6 +194,38 @@ button { cursor: pointer; border: none; border-radius: 6px; font-size: 0.85rem; 
   flex-shrink: 0;
 }
 
+.composer-form {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 0;
+}
+
+.bubble--optimistic {
+  opacity: 0.92;
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.35);
+}
+
+.grape-roster-badge--muted {
+  color: var(--text-muted);
+  border-color: var(--border);
+  background: var(--surface-2);
+}
+
+.grape-roster-badge--pulse {
+  animation: roster-pulse 1s ease-in-out infinite;
+}
+@keyframes roster-pulse {
+  50% { opacity: 0.45; }
+}
+
+.config-error {
+  font-size: 0.82rem;
+  color: var(--error);
+  margin: 8px 0 0;
+}
+
 .composer-input {
   flex: 1;
   background: var(--surface-2);
@@ -210,7 +242,8 @@ button { cursor: pointer; border: none; border-radius: 6px; font-size: 0.85rem; 
 }
 .composer-input:focus { border-color: var(--accent); }
 .composer-input::placeholder { color: var(--text-muted); }
-.composer-input:disabled { opacity: 0.5; cursor: not-allowed; }
+.composer-input:disabled,
+.composer-input:read-only { opacity: 0.65; cursor: not-allowed; }
 
 /* ── Config panel ─────────────────────────────────────────────────────────── */
 
@@ -277,9 +310,93 @@ button { cursor: pointer; border: none; border-radius: 6px; font-size: 0.85rem; 
   margin-top: 4px;
 }
 
+/* ── Grape panels ─────────────────────────────────────────────────────────── */
+
+.bubble--grapes { background: var(--asst-bg); }
+.bubble--grapes .bubble-role { color: #a78bfa; }
+
+.grape-roster-badge {
+  font-size: 0.72rem;
+  font-family: monospace;
+  background: rgba(167,139,250,0.12);
+  border: 1px solid rgba(167,139,250,0.3);
+  border-radius: 4px;
+  padding: 2px 8px;
+  color: #a78bfa;
+}
+
+.grape-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.grape-panel {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.grape-panel--done  { border-color: rgba(52,211,153,0.25); }
+.grape-panel--error { border-color: rgba(239,68,68,0.25); }
+
+.grape-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.grape-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  font-family: monospace;
+}
+
+.grape-tools { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+
+.tool-chip {
+  font-size: 0.68rem;
+  font-family: monospace;
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 3px;
+  padding: 1px 6px;
+  color: #93c5fd;
+  opacity: 0.75;
+}
+.tool-chip--done { opacity: 1; background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.25); color: #6ee7b7; }
+
+.grape-done-badge  { margin-left: auto; font-size: 0.8rem; color: #34d399; }
+.grape-error-badge { margin-left: auto; font-size: 0.8rem; color: #f87171; }
+
+.grape-panel-body {
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 320px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.grape-waiting { color: var(--text-muted); font-style: italic; font-size: 0.82rem; }
+.grape-error-text { color: #fca5a5; font-size: 0.85rem; }
+
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .bubble { padding: 12px 16px; }
   .composer { padding: 10px 14px; }
   .header { padding: 10px 14px; }
+  .grape-grid { grid-template-columns: 1fr; }
 }

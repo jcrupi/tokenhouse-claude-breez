@@ -2,3 +2,7 @@ node_modules
 dist
 .env.local
 .env
+
+# Vendored OpenClaude checkout (large); link or subtree separately if needed.
+OPENCLAUDE/
+
